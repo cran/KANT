@@ -1,4 +1,5 @@
 exportPattern("^[[:alpha:]]+")
-import(Biobase)
 import(affy)
+import(Biobase)
+
 

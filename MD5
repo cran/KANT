@@ -1,10 +1,10 @@
-aa5711d968b09d1a7a4449790f85242a *DESCRIPTION
-073f926adf0d6fc20e0644c1ab1fdf74 *NAMESPACE
+a649adcc3f0c807123d505049c7adb0b *DESCRIPTION
+fcc1a8ae3b463297171c7d528f449133 *NAMESPACE
 781d7bc5a4f7ef4e26cb0f8d94a49d80 *R/KANT-internal.R
-de37b017dbb4f156a2fb06aac0454d43 *R/expression_up.R
+f7a4506928a03c652eb9bf0d55b39764 *R/expression_up.R
 2a5ae18e2322767afcd66ebfc012b2a0 *R/plot_up.R
-88926d4826f059650b4d4c646c9a8ec2 *data/TM.rda
-9b144fe8aeb28aeb370038a4cf2d11c2 *man/KANT-package.Rd
-1552840f7b20c11324d1d802c4eb938b *man/TM.Rd
-736779fcc7e48de9fabcb4be9ac852b2 *man/expression_up.Rd
+db880afe239559b7f27cb03e02fcac9f *data/TM.rda
+f47127b9fb4116530e4e79ce8b3edd62 *man/KANT-package.Rd
+35b2eb474cbb7793d4d8f64db843cdea *man/TM.Rd
+ed9361a8d7820328846ab9a9f33df595 *man/expression_up.Rd
 58a93d861852a9107f67dd28b28f88d6 *man/plot_up.Rd

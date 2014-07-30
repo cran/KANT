@@ -1,9 +1,11 @@
 expression_up <-
-function(eset, TUM, CTRL,seuil){
+function(data,type="eset", CASE, CTRL,seuil=0.5){
+  if (type=="eset"){exprs=exprs(data)}
+  if (type=="tab"){exprs=data}
 
-  newData <- t(apply(exprs(eset),1,function(v){   # calculates for every propeset
+  newData <- t(apply(exprs,1,function(v){   # calculates for every propeset
   lc <- length(CTRL)
-  lt <- length(TUM)
+  lt <- length(CASE)
   limit= floor(lc*0.025)+1 # maximum number of outliers to suppress
   CTRL2=CTRL
 	M <-max(v[CTRL2])
@@ -23,7 +25,7 @@ function(eset, TUM, CTRL,seuil){
     i=i+1
     }
 
-	pop <-colnames(exprs(eset)[,TUM][,which(v[TUM] > seuil + M)])
+	pop <-colnames(exprs[,CASE][,which(v[CASE] > seuil + M)])
 	l <- length(pop)
 	if (l>0) Delta_median_up <- median(v[pop]) - M else Delta_median_up <- 0
 
@@ -45,7 +47,14 @@ function(eset, TUM, CTRL,seuil){
 	))
 
 colnames(newData)<- c("Score_up","Numbre_up","Max_normal","Outliers","Delta_median_up","Mean_up","Median_up","sd_up","IQR_up","Samples_up")
-pData(featureData(eset)) <- cbind(pData(featureData(eset)),newData)
-eset=eset[order(as.numeric(as.character(featureData(eset)$Score_up)), decreasing=TRUE),]
+
+if(type=="eset"){
+pData(featureData(data)) <- cbind(pData(featureData(data)),newData)
+eset=data[order(as.numeric(as.character(featureData(data)$Score_up)), decreasing=TRUE),]
 return(eset)
+}
+else {
+newData=newData[order(as.numeric(as.character(newData[,"Score_up"])),decreasing=TRUE),] 
+return(newData)
+}
 }
